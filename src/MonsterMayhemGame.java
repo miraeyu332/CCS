@@ -55,23 +55,7 @@ public class MonsterMayhemGame {
         int x = player.side == 0 ? 0 : 9;
         boolean placed = false;
 
-        for(int i = 0; i < 30; ++i) {
-            int y = random.nextInt(10);
-            if (!board.isOccupied(x, y)) {
-                Object monster;
-                switch (type) {
-                    case 1 -> monster = new Vampire(x, y, player);
-                    case 2 -> monster = new Werewolf(x, y, player);
-                    case 3 -> monster = new Ghost(x, y, player);
-                    default -> return;
-                }
 
-                player.monsters.add(monster);
-                board.placeMonster((Monster)monster);
-                placed = true;
-                System.out.println("Placed " + monster.getClass().getSimpleName() + " at (" + x + ", " + y + ")");
-                break;
-            }
         }
 
         if (!placed) {
