@@ -7,11 +7,13 @@ public class MonsterMayhemServer {
     private static Map<Integer, GameSession> games = new HashMap<>();
 
     public static void main(String[] args) throws IOException {
-        try (ServerSocket serverSocket = new ServerSocket(12345)) {
+        try (ServerSocket serverSocket = new ServerSocket(8080)) {
             System.out.println("Server started. Waiting for clients to connect...");
             while (true) {
                 new ClientHandler(serverSocket.accept()).start();
             }
+        }catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
