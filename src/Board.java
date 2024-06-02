@@ -1,4 +1,4 @@
-
+import java.io.PrintWriter;
 
 class Board {
     Monster[][] grid;
@@ -45,5 +45,8 @@ class Board {
             System.out.println(" |");
         }
         System.out.println("  ---------------------");
+    }
+
+    public void printBoard(PrintWriter printWriter) {
     }
 }
